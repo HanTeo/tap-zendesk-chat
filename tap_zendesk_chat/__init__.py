@@ -118,8 +118,8 @@ def main_impl():
         discover(args.config).dump()
         print()
     else:
-        catalog = Catalog.from_dict(args.properties) \
-            if args.properties else discover(args.config)
+        catalog = Catalog.from_dict(args.catalog) \
+            if args.catalog else discover(args.config)
         ctx = Context(args.config, args.state, catalog)
         sync(ctx)
 
